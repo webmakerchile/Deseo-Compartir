@@ -1,0 +1,68 @@
+
+:root {
+  --thm-font: 'Poppins', sans-serif;
+  --thm-base: #fbac1e;
+  --thm-color: #6809dc;
+  --thm-color2: #0985f9;
+  --thm-black: #252c4b;
+  --thm-white: #ffffff;
+  --thm-ase: #afb2bf;
+  --thm-gray: #8e8e8e;
+  --thm-f6: #F1F8FF;
+  --thm-f8: #F8F8F8;
+  --thm-fb: #f6f6f6;
+  --thm-p: #737789;
+}
+
+body {
+  font-family: var(--thm-font);
+  background-color: var(--thm-f8);
+  color: var(--thm-p);
+}
+
+a {
+  color: var(--thm-color2);
+}
+a:hover {
+  color: var(--thm-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--thm-black);
+}
+
+.bg-f1,
+.bg-f2,
+.bg-light {
+  background-color: var(--thm-fb) !important;
+}
+
+.atf-themes-btn {
+  background-color: var(--thm-base);
+  color: var(--thm-white);
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.atf-themes-btn:hover {
+  background-color: var(--thm-color2);
+  color: var(--thm-white);
+}
+
+.atf-section-title .sub-title {
+  color: var(--thm-color);
+}
+
+.atf-section-title .title {
+  color: var(--thm-black);
+}
+
+.atf-footer-link,
+.atf-footer-social-icon {
+  color: var(--thm-white);
+}
+
+.atf-footer-link a,
+.atf-footer-social-icon a {
+  color: var(--thm-white);
+}

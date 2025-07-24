@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+	<head>
+		<!-- Meta -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		
+		<!-- SITE TITLE -->
+		<title>Softio - Multipage App & Software Landing Page Template</title>
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+		
+		<!-- Latest Bootstrap min CSS -->
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">	
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap" rel="stylesheet">		
+		<!-- Font Awesome CSS -->
+		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/odometer.min.css">
+		<!--- owl carousel Css-->
+		<link rel="stylesheet" href="assets/owlcarousel/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="assets/owlcarousel/css/owl.theme.default.min.css">
+		<!--animate Css-->
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/theme-spacing.css">
+		<!-- Style CSS -->
+		<link rel="stylesheet" href="assets/css/style.css">
+		<!-- Responsive CSS -->
+		<link rel="stylesheet" href="assets/css/responsive.css">
+		<link rel="stylesheet" href="css/style-colors.css">
+
+
+<style>
+:root {
+  --color-primario: #EBA900;     /* Amarillo Dorado */
+  --color-secundario: #0A9396;   /* Verde Aqua */
+  --color-acento: #FAA915;       /* Naranja Brillante */
+  --color-intenso: #1A1F36;      /* Azul oscuro profundo para contraste */
+  --color-blanco: #FFFFFF;       /* Blanco puro */
+
+  --thm-font: 'Poppins', sans-serif;
+
+  /* Fondos y grises */
+  --thm-ase: #afb2bf;
+  --thm-gray: #8e8e8e;
+  --thm-f6: #F1F8FF;
+  --thm-f8: #F8F8F8;
+  --thm-fb: #f6f6f6;
+  --thm-p: #737789;
+}
+
+body {
+  font-family: var(--thm-font);
+  background-color: var(--thm-f8);
+  color: var(--thm-p);
+}
+
+a {
+  color: var(--color-secundario);
+}
+
+a:hover,
+a:active {
+  color: var(--color-intenso);
+  text-decoration: none;
+  outline: 0;
+}
+
+a:hover {
+  --bs-link-color-rgb: var(--bs-link-hover-color-rgb); /* solo si usas Bootstrap */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--thm-font);
+  color: var(--color-intenso);
+}
+
+h3 {
+  font-size: 28px;
+  font-weight: 700;
+  background-image: linear-gradient(90deg, var(--color-secundario), var(--color-primario));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h4 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background-image: linear-gradient(90deg, var(--color-secundario), var(--color-primario));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+/* Fondo general para secciones claras */
+.bg-f1,
+.bg-f2,
+.bg-light {
+  background-color: var(--thm-fb) !important;
+}
+
+/* Botón base */
+.atf-themes-btn {
+  background-color: var(--color-intenso);
+  color: var(--color-blanco);
+  font-family: var(--thm-font);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  padding: 12px 15px 12px 40px;
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.atf-themes-btn:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-blanco);
+  padding: 12px 25px;
+}
+
+.atf-section-title .sub-title {
+  color: var(--color-secundario);
+}
+
+.atf-section-title .title {
+  font-weight: 700;
+  text-transform: capitalize;
+  font-family: var(--thm-font);
+  background: linear-gradient(90deg, var(--color-secundario), var(--color-primario));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.atf-brand-content {
+  background: var(--color-intenso);
+  padding: 20px;
+  color: var(--color-blanco);
+  transition: 0.3s;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.atf-brand-content .atf-brand-title h3 {
+  text-align: left;
+  display: inline-block;
+  font-size: 24px;
+  color: var(--color-blanco);
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.atf-footer-link,
+.atf-footer-social-icon {
+  color: var(--color-blanco);
+}
+
+.atf-footer-link a,
+.atf-footer-social-icon a {
+  color: var(--color-blanco);
+}
+
+.atf-clip-area {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 83%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 83%);
+  background: linear-gradient(90deg, var(--color-secundario), var(--color-primario));
+}
+
+/* Clase reutilizable para texto con degradado */
+.gradient-text {
+  background: linear-gradient(90deg, var(--color-secundario), var(--color-primario));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+  .atf-status {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0A9396, #EBA900);
+    z-index: 99999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .atf-status.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  @keyframes bgFade {
+    0% {
+      background: linear-gradient(135deg, #0A9396, #EBA900);
+    }
+    100% {
+      background: linear-gradient(135deg, #FAA915, #0A9396);
+    }
+  }
+
+.atf-preloader-content {
+  text-align: center;
+  position: relative;
+  animation: fadeBounce 2s ease-in-out infinite;
+}
+
+/* Contenedor con halo */
+.preloader-logo-wrapper {
+  position: relative;
+  display: inline-block;
+  z-index: 2;
+}
+
+.preloader-logo-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(circle, rgba(235, 169, 0, 0.3) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: haloPulse 2.5s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Logo dentro del wrapper */
+.preloader-logo {
+  width: 120px;
+  max-width: 30vw;
+  animation: pulseLogo 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+  z-index: 2;
+  position: relative;
+}
+
+/* Texto del preloader */
+.preloader-text {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(90deg, #EBA900, #FAA915, #0A9396);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textSlide 3s linear infinite;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Animación logo */
+@keyframes pulseLogo {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.1) translateY(-6px);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+/* Animación halo */
+@keyframes haloPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* Animación texto */
+@keyframes textSlide {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Animación fade-in suave */
+@keyframes fadeInPage {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aplicar al cargar la página */
+body.fade-in {
+  animation: fadeInPage 1s ease-out forwards;
+}
+
+/* Aplica animación suave al cargar la web */
+body.page-loaded main,
+body.page-loaded header,
+body.page-loaded section,
+body.page-loaded footer {
+  animation: fadeInPage 1.2s ease-out both;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+/* Animación clave */
+@keyframes fadeInPage {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.donation-form label {
+  font-weight: 500;
+  color: var(--color-intenso);
+}
+
+.donation-form input,
+.donation-form select {
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid var(--thm-gray);
+  font-family: var(--thm-font);
+}
+
+.donation-form .form-control:focus {
+  border-color: var(--color-secundario);
+  box-shadow: 0 0 0 0.2rem rgba(10, 147, 150, 0.25);
+}
+
+
+
+</style>
+
+	</head>
+
+
+
+	<body>
+
+		<!-- Page Wrapper -->
+		<div class="page-wrapper">
+		
+			<!-- START PRELOADER -->
+			<div class="atf-status" id="preloader">
+			<div class="atf-preloader-content">
+				<img src="assets/img/logo.png" alt="Cargando..." class="preloader-logo" />
+				<p class="preloader-text">Cargando web...</p>
+			</div>
+			</div>
+
+
+			 <!--  END PRELOADER -->
+			 
+			<!-- START back-to-top -->	
+			<button class="atf-scroll-top atf-back-to-top" data-targets="html">
+				<i class="fa fa-angle-up atf-scrollup-icon"></i>
+			</button>
+			<!-- END back-to-top-->	
+		
+			<!-- Start Header Section -->
+<header class="atf-site-header atf-style1 atf-sticky-header">
+  <div class="atf-main-header">
+    <div class="container">
+      <div class="atf-main-header-in d-flex justify-content-between align-items-center">
+
+        <!-- LOGO -->
+        <div class="atf-main-header-start">
+          <a class="atf-site-branding atf-white-logo" href="index.html">
+		<a href="index.html">
+		<img src="assets/img/logo.png" alt="Logo" style="max-height: 100px; width: auto;">
+		</a>
+
+          </a>
+        </div>
+
+        <!-- BOTONES -->
+        <div class="atf-header-buttons d-flex align-items-center gap-3">
+          <a class="atf-themes-btn" href="https://wa.me/56912345678" target="_blank">
+            <span>WhatsApp</span>
+          </a>
+          <a class="atf-themes-btn" href="#donar">
+            <span>Donar</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+			<!-- End Header Section -->
+			
+			
+			<!-- START HOME -->
+	<section id="home" class="atf-hero-area-style1 atf-clip-area atf-align-items-details">
+	<div class="container">
+		<div class="row justify-content-start text-start align-items-center">
+		<!--start COL-->
+		<div class="col-lg-7 col-md-7 col-12">
+			<div class="atf-hero-content-style1">
+			<span class="sub-title text-white">Participación Ciudadana Digital</span>
+			<h1 class="title">Inicia la Transformación de tu Unidad Vecinal</h1>
+			<p class="me-lg-5 describtion">
+				Descubre cómo implementar nuestra Plataforma de Participación Ciudadana y construyamos juntos un Ecosistema Colaborativo en tu comunidad. 
+			</p>
+
+			<!-- Main-btn -->
+			<div class="atf-one__btn-wrap">
+				<a href="#app" class="atf-one__btn">
+				<i class="fa fa-globe"></i><span>Explorar</span><b>App Web</b>
+				</a>
+			</div>
+			</div><!--- END CONTENT -->
+		</div><!--- END COL -->
+
+		<div class="col-lg-5 col-md-5 col-12 d-none d-md-block text-center">
+			<div class="home-image-2">
+			<img src="assets/img/bg/mobile3.png" alt="app Deseo Compartir">
+			</div>
+		</div><!--- END COL -->
+		</div><!--- END ROW -->
+	</div><!--- END CONTAINER -->
+	</section>
+
+	<section id="donar" class="atf-section-padding bg-light">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <div class="atf-section-title">
+          <span class="sub-title">Apoya nuestra causa</span>
+          <h2 class="title">¡Tu aporte puede hacer la diferencia!</h2>
+          <p class="describtion">
+            Con tu donación ayudamos a más comunidades a fortalecer la participación ciudadana. Cada aporte construye un mejor entorno vecinal.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center text-center">
+      <div class="col-md-6">
+        <form action="procesar_donacion.php" method="POST" class="donation-form">
+          <div class="form-group mb-3">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" class="form-control" required>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="monto">Selecciona el monto</label>
+            <select name="monto" id="monto" class="form-control" required>
+              <option value="">Selecciona una opción</option>
+              <option value="1000">$1.000 CLP</option>
+              <option value="3000">$3.000 CLP</option>
+              <option value="5000">$5.000 CLP</option>
+              <option value="10000">$10.000 CLP</option>
+              <option value="20000">$20.000 CLP</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <button type="submit" class="atf-themes-btn mt-3">
+            <span>Donar Ahora</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+			<!-- END HOME -->
+			
+			<!-- START COMPANY BRAND LOGO  -->
+<div id="atf-brand-area" class="atf-section-padding">
+  <div class="container">
+    <div class="row clearfix justify-content-center text-center">
+      <div class="atf-section-title wow zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
+        <span class="sub-title">¿A quién va dirigida?</span>
+      </div>
+    </div>
+
+    <div class="row clearfix">
+      <div class="col-md-12 col-lg-12">
+        <div class="atf-brand-active owl-carousel">
+
+          <div class="atf-brand-content">
+            <div class="atf-brand-icon">
+              <i class="fa fa-user"></i>
+            </div>
+            <div class="atf-brand-title">
+              <h3>Vecin@s<br>Activos</h3>
+            </div>
+          </div>
+
+          <div class="atf-brand-content">
+            <div class="atf-brand-icon">
+              <i class="fa fa-users-cog"></i>
+            </div>
+            <div class="atf-brand-title">
+              <h3>Organizaciones<br>Locales</h3>
+            </div>
+          </div>
+
+          <div class="atf-brand-content">
+            <div class="atf-brand-icon">
+              <i class="fa fa-university"></i>
+            </div>
+            <div class="atf-brand-title">
+              <h3>Municipios<br>Conectados</h3>
+            </div>
+          </div>
+
+          <div class="atf-brand-content">
+            <div class="atf-brand-icon">
+              <i class="fa fa-hands-helping"></i>
+            </div>
+            <div class="atf-brand-title">
+              <h3>Voluntari@s<br>Comprometid@s</h3>
+            </div>
+          </div>
+
+          <div class="atf-brand-content">
+            <div class="atf-brand-icon">
+              <i class="fa fa-bullhorn"></i>
+            </div>
+            <div class="atf-brand-title">
+              <h3>Líderes<br>Comunitarios</h3>
+            </div>
+          </div>
+
+          <div class="atf-brand-content">
+            <div class="atf-brand-icon">
+              <i class="fa fa-globe"></i>
+            </div>
+            <div class="atf-brand-title">
+              <h3>Ciudadan@s<br>Informad@s</h3>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- END COL -->
+    </div><!--END ROW-->
+  </div><!--END CONTAINER-->
+</div>
+
+			<!-- END COMPANY BRAND LOGO -->
+			
+			
+			<!-- START FEATURE -->
+<section id="service" class="atf-section-padding bg-f1">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-xl-6 col-lg-6 col-md-8 col-12">
+        <div class="atf-section-title wow zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
+          <span class="sub-title">Ventajas</span>
+          <h2 class="title">¿Por qué usar la app?</h2>
+          <p class="describtion">Deseo Compartir App es una plataforma sencilla, moderna y eficaz para fortalecer la participación ciudadana en tu Unidad Vecinal.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row clearfix">
+      <div class="col-lg-6 col-xl-6 col-md-6 col-12">
+        <div class="atf-single-feature style1 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s" data-wow-offset="0">
+          <div class="atf-feature-icon">
+            <i class="fa-solid fa-bullhorn"></i>
+          </div>
+          <div class="atf-feature-text">
+            <h4>Participación Real</h4>
+            <p>Exprésate mediante encuestas, foros y propuestas para influir en decisiones que afectan a tu comunidad.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-xl-6 col-md-6 col-12">
+        <div class="atf-single-feature style1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
+          <div class="atf-feature-icon">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <div class="atf-feature-text">
+            <h4>Fomenta Ideas</h4>
+            <p>Comparte propuestas innovadoras y colabora en la creación de soluciones para tu territorio.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-xl-6 col-md-6 col-12">
+        <div class="atf-single-feature style1 wow fadeIn" data-wow-duration="3s" data-wow-delay="0.5s" data-wow-offset="0">
+          <div class="atf-feature-icon">
+            <i class="fa-solid fa-handshake-angle"></i>
+          </div>
+          <div class="atf-feature-text">
+            <h4>Gestión CoSocial</h4>
+            <p>Empodera a vecin@s, organizaciones y líderes locales promoviendo una cultura de acción colaborativa.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-xl-6 col-md-6 col-12">
+        <div class="atf-single-feature style1 wow fadeIn" data-wow-duration="3s" data-wow-delay="0.5s" data-wow-offset="0">
+          <div class="atf-feature-icon">
+            <i class="fa-solid fa-bell"></i>
+          </div>
+          <div class="atf-feature-text">
+            <h4>Alertas y Noticias</h4>
+            <p>Recibe notificaciones con nuevas oportunidades de participación y actualizaciones relevantes de tu sector.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+			<!-- END FEATURE -->
+			
+
+			<!-- START ABOUT AREA  -->
+<section id="about" class="atf-about-area atf-section-padding">
+  <div class="container">
+    <div class="row clearfix align-items-center">
+      <div class="col-lg-6 col-12 ">
+        <div class="atf-about-area wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+          <div class="atf-section-title">
+            <span class="sub-title">Funcionalidades</span>
+            <h2 class="title">Todo lo que puedes hacer</h2>
+          </div>
+
+          <div class="atf-about-list d-flex justify-content-between">
+            <h4><i class="fa fa-check mr-5"></i>Responder Encuestas</h4>
+            <h4><i class="fa fa-check mr-5"></i>Proponer Ideas</h4>
+          </div>
+          <div class="atf-about-list d-flex justify-content-between">
+            <h4><i class="fa fa-check mr-5"></i>Participar en Foros</h4>
+            <h4><i class="fa fa-check mr-5"></i>Votar Iniciativas</h4>
+          </div>
+          <div class="atf-about-list d-flex justify-content-between">
+            <h4><i class="fa fa-check mr-5"></i>Comentar Propuestas</h4>
+            <h4><i class="fa fa-check mr-5"></i>Unirte a Comunidades</h4>
+          </div>
+          <div class="atf-about-list d-flex justify-content-between">
+            <h4><i class="fa fa-check mr-5"></i>Recibir Notificaciones</h4>
+          </div>
+
+          <!-- About-btn -->
+          <div class="atf-about-btn mt-40">
+            <a href="#" class="atf-themes-btn"><span>Ver Demo</span> </a>
+          </div>
+        </div>
+      </div><!--- END COL -->
+
+      <div class="col-lg-6 col-12 mt-lg-40 wow zoomIn" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+        <div class="atf-about-img text-center">
+          <img src="assets/img/about/app-mobile.png" alt="app">
+        </div>
+      </div><!--- END COL -->
+    </div><!--- END ROW -->
+  </div><!--- END CONTANIAR -->
+</section>
+	
+			<!-- END ABOUT AREA  -->
+			
+			<!-- START COMPARE AREA  -->
+<section id="compare" class="atf-compare-area atf-section-padding">
+  <div class="container">
+    <div class="row clearfix align-items-center">
+      <div class="col-lg-6 col-12 pe-lg-5 mb-lg-40 wow zoomIn" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+        <div class="atf-compare-img text-center">
+          <img src="assets/img/bg/mobile-5.png" alt="app">
+        </div>
+      </div><!--- END COL -->
+
+      <div class="col-lg-6 col-12">
+        <div class="atf-compare-area wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+          <div class="atf-section-title">
+            <span class="sub-title">Ventajas</span>
+            <h2 class="title">¿Por qué usar Deseo Compartir App?</h2>
+          </div>
+
+          <div class="atf-single-compare d-flex">
+            <div class="atf-compare-number">
+              <span><i class="fa-solid fa-bullhorn"></i></span>
+            </div>
+            <div class="atf-compare-content">
+              <h4>Participación Real</h4>
+              <p>Expresa tus ideas, vota en encuestas y haz que tu voz tenga impacto directo en tu comunidad vecinal.</p>
+            </div>
+          </div>
+
+          <div class="atf-single-compare d-flex">
+            <div class="atf-compare-number">
+              <span><i class="fa-solid fa-users-line"></i></span>
+            </div>
+            <div class="atf-compare-content">
+              <h4>Colaboración Ciudadana</h4>
+              <p>Conecta con otros vecinos y vecinas, comparte propuestas y construyan juntos un mejor entorno.</p>
+            </div>
+          </div>
+
+          <div class="atf-single-compare d-flex">
+            <div class="atf-compare-number">
+              <span><i class="fa-solid fa-bolt"></i></span>
+            </div>
+            <div class="atf-compare-content">
+              <h4>Gestión Ágil</h4>
+              <p>Accede a información clave, sigue los avances de las iniciativas y participa en tiempo real desde cualquier dispositivo.</p>
+            </div>
+          </div>
+
+        </div>
+      </div><!--- END COL -->
+    </div><!--- END ROW -->
+  </div><!--- END CONTAINER -->
+</section>
+
+			<!-- END COMPARE AREA  -->
+			
+			
+			<!-- START FEATURE -->
+<section id="feature" class="atf-section-padding bg-f1">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-xl-6 col-lg-6 col-md-8 col-12">
+        <div class="atf-section-title wow zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
+          <span class="sub-title">Funcionalidades</span>
+          <h2 class="title">Lo que puedes hacer en Deseo Compartir App</h2>
+          <p class="describtion">Explora cómo nuestra plataforma facilita la participación ciudadana activa en tu unidad vecinal.</p>
+        </div>
+      </div><!--- END COL -->
+    </div><!--- END ROW -->
+
+    <div class="row clearfix align-items-center">  
+      <div class="col-lg-6 col-12">
+        <div class="atf-single-feature style1 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s" data-wow-offset="0">
+          <div class="atf-feature-icon">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div class="atf-feature-text">
+            <h4>Encuestas Interactivas</h4>
+            <p>Participa en encuestas comunitarias y ayuda a tomar decisiones relevantes para tu barrio.</p>
+          </div>
+        </div>
+
+        <div class="atf-single-feature style1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">  
+          <div class="atf-feature-icon">
+            <i class="fa-solid fa-lightbulb"></i>
+          </div>
+          <div class="atf-feature-text">
+            <h4>Propuestas Vecinales</h4>
+            <p>Envía tus ideas para mejorar tu entorno y colabora en su desarrollo junto a tu comunidad.</p>
+          </div>
+        </div>
+
+        <div class="atf-single-feature style1 wow fadeIn" data-wow-duration="3s" data-wow-delay="0.5s" data-wow-offset="0">
+          <div class="atf-feature-icon">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <div class="atf-feature-text">
+            <h4>Foros de Debate</h4>
+            <p>Intercambia opiniones con otros vecinos y vecinas sobre temas que afectan a tu unidad vecinal.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-12 ps-lg-5 mt-lg-40 wow zoomIn" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+        <div class="atf-feature-img text-center">
+          <img src="assets/img/bg/mobile2.png" alt="app">
+        </div>
+      </div><!--- END COL -->
+    </div><!--- END ROW -->
+  </div><!--- END CONTAINER -->
+</section>
+
+			<!-- END FEATURE -->
+			
+
+			<!-- TESTIMONIAL SECTION START-->
+<section id="testimonial" class="atf-testimonial-area atf-section-padding">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-xl-6 col-lg-6 col-md-8 col-12">
+        <div class="atf-section-title wow zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
+          <span class="sub-title">Testimonios</span>
+          <h2 class="title">Lo que opinan nuestros usuarios</h2>
+          <p class="describtion">Vecin@s y organizaciones ya están transformando sus comunidades gracias a Deseo Compartir App.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row clearfix justify-content-center text-center">
+      <div class="col-lg-12 col-md-12 col-12">
+        <!-- Testimonials Slider-->
+        <div id="testimonial-slider" class="atf_owl_dot_slider owl-carousel">
+
+          <div class="atf-testimonial-item">
+            <div class="atf-testimonial-image">
+              <img src="assets/img/client/01.jpg" alt="usuario 1">
+            </div>
+            <div class="atf-testimonial-inner">
+              <div class="atf-testimonial-text">
+                Gracias a esta app pude proponer una iniciativa en mi barrio que hoy ya se está implementando. ¡Es una herramienta poderosa!
+              </div>
+            </div>
+            <div class="atf-testimonial-info text-center">
+              <div class="atf-testimonial-name"><h3>Marcela Torres</h3></div>
+              <div class="atf-testimonial-designation"><p>Vecina - Unidad Vecinal N°12</p></div>
+            </div>
+          </div>
+
+          <div class="atf-testimonial-item">
+            <div class="atf-testimonial-image">
+              <img src="assets/img/client/02.jpg" alt="usuario 2">
+            </div>
+            <div class="atf-testimonial-inner">
+              <div class="atf-testimonial-text">
+                Hemos logrado una participación más activa de los vecinos en las decisiones del comité gracias a esta plataforma.
+              </div>
+            </div>
+            <div class="atf-testimonial-info text-center">
+              <div class="atf-testimonial-name"><h3>Rodrigo Sanhueza</h3></div>
+              <div class="atf-testimonial-designation"><p>Presidente Junta de Vecinos</p></div>
+            </div>
+          </div>
+
+          <div class="atf-testimonial-item">
+            <div class="atf-testimonial-image">
+              <img src="assets/img/client/03.jpg" alt="usuario 3">
+            </div>
+            <div class="atf-testimonial-inner">
+              <div class="atf-testimonial-text">
+                La app es intuitiva, útil y me mantiene al tanto de todas las actividades vecinales sin perderme nada.
+              </div>
+            </div>
+            <div class="atf-testimonial-info text-center">
+              <div class="atf-testimonial-name"><h3>Daniela Araya</h3></div>
+              <div class="atf-testimonial-designation"><p>Vecina - Unidad Vecinal N°4</p></div>
+            </div>
+          </div>
+
+          <div class="atf-testimonial-item">
+            <div class="atf-testimonial-image">
+              <img src="assets/img/client/01.jpg" alt="usuario 4">
+            </div>
+            <div class="atf-testimonial-inner">
+              <div class="atf-testimonial-text">
+                Una gran herramienta para organizaciones comunitarias que desean generar impacto social en su territorio.
+              </div>
+            </div>
+            <div class="atf-testimonial-info text-center">
+              <div class="atf-testimonial-name"><h3>Carla Espinoza</h3></div>
+              <div class="atf-testimonial-designation"><p>Fundación Comunitaria Juntos</p></div>
+            </div>
+          </div>
+
+        </div><!-- Testimonials Slider End-->
+      </div>
+    </div>
+  </div>
+</section>
+
+			<!-- TESTIMONIAL SECTION END-->
+			
+			<!-- COUNTER SECTION START-->
+<section id="counter" class="atf-counter-area pb-100">
+  <div class="container">
+    <div class="row clearfix text-start">
+
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12 atf-main-counter">
+        <div class="atf-counter wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+          <div class="atf-counter-content">
+            <span class="atf-counter-value odometer" data-count="1500">00</span>
+            <h3>Vecin@s activos</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12 atf-main-counter">
+        <div class="atf-counter wow fadeIn" data-wow-duration="2s" data-wow-delay="0.3s" data-wow-offset="0">
+          <div class="atf-counter-content">
+            <span class="atf-counter-value odometer" data-count="75">00</span>
+            <h3>Unidades vecinales</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12 atf-main-counter">
+        <div class="atf-counter wow fadeIn" data-wow-duration="3s" data-wow-delay="0.4s" data-wow-offset="0">
+          <div class="atf-counter-content">
+            <span class="atf-counter-value odometer" data-count="230">00</span>
+            <h3>Propuestas enviadas</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6 col-12 atf-main-counter">
+        <div class="atf-counter wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
+          <div class="atf-counter-content">
+            <span class="atf-counter-value odometer" data-count="1200">00</span>
+            <h3>Participaciones ciudadanas</h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+			<!-- COUNTER SECTION END-->
+			
+			<!-- START SCREENSHOT -->
+<section id="screenshot" class="atf-screenshot-area atf-section-padding bg-f1">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-xl-6 col-lg-6 col-md-8 col-12">
+        <div class="atf-section-title wow zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
+          <span class="sub-title">Vista previa</span>
+          <h2 class="title">Pantallas de la App</h2>
+          <p class="describtion">Explora algunas imágenes reales de la plataforma en acción. Así se ve tu participación ciudadana en marcha.</p>
+        </div>
+      </div><!--- END COL -->
+    </div><!--- END ROW -->
+    
+    <div class="row justify-content-center text-center">					
+      <div class="col-lg-12">
+        <div class="screenshot-carousel owl-carousel atf_owl_dot_slider">
+          <img src="assets/img/screenshot/screenshot-1.png" alt="Pantalla App">
+          <img src="assets/img/screenshot/screenshot-2.png" alt="Pantalla App">
+          <img src="assets/img/screenshot/screenshot-3.png" alt="Pantalla App">
+          <img src="assets/img/screenshot/screenshot-4.png" alt="Pantalla App">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+			<!-- END SCREENSHOT -->
+			<!-- START FREQUENTLY AREA -->
+<section id="faq" class="atf-faq-area atf-section-padding bg-f2">
+  <div class="container">
+    <div class="row justify-content-start text-start">
+      <div class="col-lg-6 col-12 justify-content-start text-start">
+        <div class="atf-section-title wow zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
+          <span class="sub-title">Preguntas Frecuentes</span>
+          <h2 class="title">¿Tienes dudas sobre la App?</h2>
+          <p class="describtion">Aquí respondemos las preguntas más comunes para ayudarte a entender y usar Deseo Compartir App.</p>
+        </div>
+      </div><!--- END COL -->
+
+      <div class="col-lg-6 col-12">
+        <div class="atf-faq-accordion text-start" id="accordion">
+          
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">
+                <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  ¿Cómo puedo registrarme en la plataforma?
+                </button>
+              </span>
+            </div>
+            <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+              <div class="card-body">
+                <p>Solo necesitas un correo electrónico. Ingresa a la web, haz clic en “Registrarse” y sigue los pasos. En minutos podrás comenzar a participar.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">
+                <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  ¿Qué tipo de participación puedo tener?
+                </button>
+              </span>
+            </div>
+            <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+              <div class="card-body">
+                <p>Puedes responder encuestas, proponer ideas, participar en foros de discusión y votar en decisiones relevantes para tu comunidad.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">
+                <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  ¿Está disponible como aplicación móvil?
+                </button>
+              </span>
+            </div>
+            <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+              <div class="card-body">
+                <p>Por ahora, Deseo Compartir funciona como una aplicación web. Puedes acceder desde cualquier navegador, tanto en celular como en computador.</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- END ACCORDION -->
+      </div><!--- END COL -->
+    </div><!-- End ROW -->	
+  </div><!-- End CONTAINER -->	
+</section>	
+
+			<!-- END FREQUENTLY AREA-->	
+			
+			<!-- START FREQUENTLY AREA -->
+<section id="download" class="atf-download-area pt-80 pb-80">
+  <div class="container">
+    <div class="row justify-content-start text-start align-items-center">
+      <div class="col-lg-6 col-12 justify-content-start text-start">
+        <div class="atf-section-title mb-0 wow zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
+          <span class="sub-title">Accede</span>
+          <h2 class="title">Usa la App Web desde tu navegador</h2>
+          <p class="describtion">No necesitas descargar nada. Accede fácilmente a Deseo Compartir App desde tu celular o computador y comienza a participar en tu comunidad.</p>
+        </div>
+        <div class="atf-one__btn-wrap mt-30">
+          <a href="#demo" class="atf-one__btn">
+            <i class="fa fa-globe"></i><span>Ver</span><b>Demostración Web</b>
+          </a>
+          
+          <a href="#faq" class="atf-one__btn ml-3">
+            <i class="fa fa-question-circle"></i><span>Leer</span><b>Preguntas Frecuentes</b>
+          </a>
+        </div>
+      </div><!--- END COL -->
+
+      <div class="col-lg-6 col-12 ps-lg-5 mt-lg-40 wow zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
+        <div class="atf-download-img text-center">
+          <img src="assets/img/about/mobile-app-downloads.png" alt="app">
+        </div>
+      </div><!--- END COL -->
+    </div><!-- End ROW -->	
+  </div><!-- End CONTAINER -->	
+</section>
+
+			<!-- END FREQUENTLY AREA-->	
+			<!-- CONTACT SECTION START-->
+			<section id="contact" class="atf-contact-area atf-section-padding">
+			<div class="container">
+
+				<!-- Título -->
+				<div class="row justify-content-center text-center mb-5">
+				<div class="col-xl-6 col-lg-6 col-md-8 col-12">
+					<div class="atf-section-title wow zoomIn" data-wow-duration="1s" data-wow-delay="0.5s">
+					<span class="sub-title">Contacto</span>
+					<h2 class="title">Hablemos</h2>
+					<p class="describtion">¿Tienes alguna duda o proyecto en mente? Estoy listo para ayudarte.</p>
+					</div>
+				</div>
+				</div>
+
+				<!-- Formulario -->
+				<div class="row justify-content-center">
+				<div class="col-lg-8 col-md-10 col-12">
+					<div class="contact">
+					<form id="contact-form" class="atf-contact-form form" method="POST" action="mail.php">
+						<div class="row">
+						<div class="form-group col-md-12">
+							<label>Tu Nombre</label>
+							<input type="text" name="name" class="form-control" id="name" placeholder="Ingresa tu nombre" required>
+						</div>
+						<div class="form-group col-md-12">
+							<label>Tu Correo</label>
+							<input type="email" name="email" class="form-control" id="form_email" placeholder="Ingresa tu correo" required>
+						</div>
+						<div class="form-group col-md-12">
+							<label>Tu Mensaje</label>
+							<textarea rows="6" name="message" class="form-control" id="message" placeholder="Escribe tu mensaje" required></textarea>
+						</div>
+						<div class="col-md-12">
+							<div class="atf-contact-btn text-start">
+							<button type="submit" name="submit" id="submitButton" class="atf-themes-btn">
+								<span>Enviar Mensaje</span>
+							</button>
+							</div>
+						</div>
+						</div>
+					</form>
+					<p class="form-message"></p>
+					</div>
+				</div>
+				</div>
+
+			</div>
+			</section>
+
+			<!-- CONTACT SECTION END-->
+
+			<!-- FOOTER SECTION START-->
+			<footer id="footer" class="black-bg atf_attach_bg" style="background-image: url(assets/img/footer/fbg.png);">
+			<div class="container">
+				<div class="row atf-section-padding justify-content-between align-items-center">
+
+				<!-- Logo e Inicio -->
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="atf-footer-link text-center text-lg-start">
+					<div class="atf-footer-logo mb-3">
+					<a href="index.html">
+					<img src="assets/img/logo.png" alt="Logo" style="max-height: 150px; width: auto;">
+					</a>
+
+					</div>
+					<div class="atf-footer-social-icon mt-3">
+						<a href="#"><i class="fab fa-facebook-f"></i></a>
+						<a href="#"><i class="fab fa-instagram"></i></a>
+						<a href="#"><i class="fab fa-x-twitter"></i></a>
+						<a href="#"><i class="fab fa-tiktok"></i></a>
+					</div>
+					</div>
+				</div>
+
+				<!-- Dirección -->
+				<div class="col-lg-4 col-md-6 col-sm-12 mt-4 mt-lg-0">
+					<div class="atf-footer-link text-center">
+					<h5 class="mb-2 gradient-text">Dirección</h5>
+					<p><i class="fas fa-map-marker-alt me-2"></i>Concepción, Chile</p>
+					</div>
+				</div>
+
+				<!-- Botón WhatsApp y Donar -->
+				<div class="col-lg-4 col-md-12 text-center mt-4 mt-lg-0">
+					<a href="https://wa.me/56912345678" class="atf-themes-btn me-2" target="_blank">
+					<i class="fab fa-whatsapp me-1"></i> WhatsApp
+					</a>
+					<a href="#donar" class="atf-themes-btn">
+					<i class="fas fa-hand-holding-heart me-1"></i> Donar
+					</a>
+				</div>
+
+				</div>
+			</div>
+
+			<!-- Copyright -->
+			<div class="atf-footer-boottom text-center mt-4">
+				<div class="container">
+				<p>&copy; 2025 WebmakerChile. Hecho con ❤️</p>
+				</div>
+			</div>
+			</footer>
+
+			<!--- END FOOTER -->
+
+		</div>
+		<!-- PAGE WRAPPER END-->
+		
+		<!-- Latest jQuery -->
+		<script src="assets/js/jquery.min.js"></script>
+		<!-- Latest compiled and minified Bootstrap -->
+		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+		<!-- owl-carousel min js  -->
+		<script src="assets/owlcarousel/js/owl.carousel.min.js"></script>
+		<!-- Counter js -->
+		<script src="assets/js/jquery.counterup.js"></script>
+		<!-- waypoints js -->
+		<script src="assets/js/waypoints.min.js"></script>
+		<!-- jquery.appear js -->
+		<script src="assets/js/jquery.appear.min.js"></script>
+		<!-- easing js -->
+		<script src="assets/js/easing.min.js"></script>
+		<script src="assets/js/odometer.min.js"></script>
+		<!-- wow js -->
+		<script src="assets/js/wow.min.js"></script>
+		<!-- ajaxchimp js -->
+		<script src="assets/js/ajaxchimp.min.js"></script>
+		<!-- form-contact js -->
+		<script src="assets/js/form-contact.js"></script>
+		<!-- main js -->
+		<script src="assets/js/main.js"></script>	
+<script>
+window.addEventListener('load', function () {
+  const preloader = document.querySelector('.atf-status');
+  if (preloader) {
+    preloader.classList.add('fade-out');
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 2500); // ahora dura 2.5 segundos
+  }
+});
+
+</script>
+
+<script>
+  window.addEventListener('load', function () {
+    const preloader = document.querySelector('.atf-status');
+
+    if (preloader) {
+      preloader.classList.add('fade-out');
+      setTimeout(() => {
+        preloader.style.display = 'none';
+        document.body.classList.add('page-loaded'); // <-- Aquí ocurre la magia
+      }, 1200); // asegúrate de que coincida con la duración del fade-out
+    }
+  });
+</script>
+
+
+	</body>
+</html>
+								

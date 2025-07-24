@@ -1,0 +1,63 @@
+@media only screen and (max-width : 2500px) {
+	.page-wrapper{
+		overflow:hidden;
+	}
+	
+}
+@media only screen and (max-width : 991px) {
+	.atf-width-area {
+		height: 1200px;
+		overflow: hidden;
+	}
+	.atf-hero-content-style1 .title {
+		font-size: 30px;
+	}
+	.atf-section-title .title{
+		font-size:30px;
+	}
+	.mt-lg-40{
+		margin-top:40px;
+	}
+	.mb-lg-40{
+		margin-bottom:40px;
+	}
+	.atf-pricing-content{
+		margin-bottom:25px;
+	}
+	.atf-single-blog{
+		margin-bottom:25px;
+	}
+	.atf-footer-link {
+		margin-bottom:25px;
+	}
+
+}
+@media only screen and (max-width: 767px) {
+	.aft-width-two {
+		height: 1100px;
+		overflow: hidden;
+	}
+	.atf-hero-content .title {
+		font-size: 30px;
+	}
+	
+
+}
+
+@media only screen and (max-width: 576px) {
+	.atf-section-title .title{
+		font-size:25px;
+	}
+
+}
+@media only screen and (max-width: 320px) {
+	#accordion .card-title button::after, #accordion .card-title button.collapsed::after {
+		top: 12px;
+	}
+	.atf-mailchamp-color {
+		background-image: linear-gradient(90deg,var(--thm-base),var(--thm-color));
+		border-radius:0px;
+		padding: 150px 10px;
+	}
+
+}
