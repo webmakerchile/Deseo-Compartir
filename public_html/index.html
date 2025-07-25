@@ -18,6 +18,11 @@
 		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">	
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap" rel="stylesheet">		
 		<!-- Font Awesome CSS -->
@@ -38,15 +43,12 @@
 
 <style>
 :root {
-  --color-primario: #EBA900;     /* Amarillo Dorado */
-  --color-secundario: #0A9396;   /* Verde Aqua */
-  --color-acento: #FAA915;       /* Naranja Brillante */
-  --color-intenso: #1A1F36;      /* Azul oscuro profundo para contraste */
-  --color-blanco: #FFFFFF;       /* Blanco puro */
-
+  --color-primario: #EBA900;
+  --color-secundario: #0A9396;
+  --color-acento: #FAA915;
+  --color-intenso: #0A9396;
+  --color-blanco: #FFFFFF;
   --thm-font: 'Poppins', sans-serif;
-
-  /* Fondos y grises */
   --thm-ase: #afb2bf;
   --thm-gray: #8e8e8e;
   --thm-f6: #F1F8FF;
@@ -64,23 +66,20 @@ body {
 a {
   color: var(--color-secundario);
 }
-
 a:hover,
 a:active {
   color: var(--color-intenso);
   text-decoration: none;
   outline: 0;
 }
-
 a:hover {
-  --bs-link-color-rgb: var(--bs-link-hover-color-rgb); /* solo si usas Bootstrap */
+  --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--thm-font);
   color: var(--color-intenso);
 }
-
 h3 {
   font-size: 28px;
   font-weight: 700;
@@ -88,7 +87,6 @@ h3 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
 h4 {
   font-size: 22px;
   font-weight: 700;
@@ -99,14 +97,12 @@ h4 {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.05);
 }
 
-/* Fondo general para secciones claras */
 .bg-f1,
 .bg-f2,
 .bg-light {
   background-color: var(--thm-fb) !important;
 }
 
-/* Botón base */
 .atf-themes-btn {
   background-color: var(--color-intenso);
   color: var(--color-blanco);
@@ -125,7 +121,6 @@ h4 {
   display: inline-block;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
-
 .atf-themes-btn:hover {
   background-color: var(--color-secundario);
   color: var(--color-blanco);
@@ -135,7 +130,6 @@ h4 {
 .atf-section-title .sub-title {
   color: var(--color-secundario);
 }
-
 .atf-section-title .title {
   font-weight: 700;
   text-transform: capitalize;
@@ -157,7 +151,6 @@ h4 {
   gap: 20px;
   justify-content: center;
 }
-
 .atf-brand-content .atf-brand-title h3 {
   text-align: left;
   display: inline-block;
@@ -171,7 +164,6 @@ h4 {
 .atf-footer-social-icon {
   color: var(--color-blanco);
 }
-
 .atf-footer-link a,
 .atf-footer-social-icon a {
   color: var(--color-blanco);
@@ -183,46 +175,36 @@ h4 {
   background: linear-gradient(90deg, var(--color-secundario), var(--color-primario));
 }
 
-/* Clase reutilizable para texto con degradado */
 .gradient-text {
   background: linear-gradient(90deg, var(--color-secundario), var(--color-primario));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-  .atf-status {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #0A9396, #EBA900);
-    z-index: 99999999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.6s ease, visibility 0.6s ease;
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .atf-status.hidden {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  @keyframes bgFade {
-    0% {
-      background: linear-gradient(135deg, #0A9396, #EBA900);
-    }
-    100% {
-      background: linear-gradient(135deg, #FAA915, #0A9396);
-    }
-  }
-/* Aplicar al cargar la página */
+.atf-status {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0A9396, #EBA900);
+  z-index: 99999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  opacity: 1;
+  visibility: visible;
+}
+.atf-status.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+@keyframes bgFade {
+  0% { background: linear-gradient(135deg, #0A9396, #EBA900); }
+  100% { background: linear-gradient(135deg, #FAA915, #0A9396); }
+}
 body.fade-in {
   animation: fadeInPage 1s ease-out forwards;
 }
-
-/* Aplica animación suave al cargar la web */
 body.page-loaded main,
 body.page-loaded header,
 body.page-loaded section,
@@ -231,8 +213,6 @@ body.page-loaded footer {
   opacity: 0;
   transform: translateY(10px);
 }
-
-/* Animación clave */
 @keyframes fadeInPage {
   to {
     opacity: 1;
@@ -240,82 +220,146 @@ body.page-loaded footer {
   }
 }
 
-.donation-form label {
-  font-weight: 500;
-  color: var(--color-intenso);
+.donation-form {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
 .donation-form input,
 .donation-form select {
-  border-radius: 4px;
-  padding: 10px;
-  border: 1px solid var(--thm-gray);
-  font-family: var(--thm-font);
-}
-
-.donation-form .form-control:focus {
-  border-color: var(--color-secundario);
-  box-shadow: 0 0 0 0.2rem rgba(10, 147, 150, 0.25);
-}
-
-/* ----- ESTILO GENERAL ----- */
-.header-btn-group a {
+  border-radius: 6px;
+  padding: 10px 15px;
+  border: 1px solid #ced4da;
   transition: all 0.3s ease;
 }
 
-/* ----- DISEÑO MÓVIL (menos de 992px) ----- */
+.donation-form input:focus,
+.donation-form select:focus {
+  border-color: var(--color-secundario);
+  box-shadow: 0 0 0 0.2rem rgba(10, 147, 150, 0.2);
+}
+
+.atf-themes-btn {
+  background-color: var(--color-secundario);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+  box-shadow: 0 5px 15px rgba(10, 147, 150, 0.2);
+}
+
+.atf-themes-btn:hover {
+  background-color: var(--color-primario);
+  color: #fff;
+}
+
+
+.header-btn-group a {
+  transition: all 0.3s ease;
+}
 @media (max-width: 991.98px) {
   .header-btn-group {
     flex-direction: column;
     align-items: center;
     padding-top: 1rem;
   }
-
   .header-btn-group a {
     width: 100%;
     max-width: 240px;
     text-align: center;
   }
 }
-
-/* ----- DISEÑO ESCRITORIO (992px o más) ----- */
 @media (min-width: 992px) {
   .header-btn-group {
     gap: 0.5rem;
   }
-
   .header-btn-group a {
     white-space: nowrap;
   }
 }
 
-/* ----- DISEÑO GENERAL DE LAS TARJETAS ----- */
+/* Estilo base de los botones del header */
 .menu-card {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: 2rem;
+  padding: 0.7rem 1.4rem;
+  font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
+  border-radius: 999px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  min-width: 160px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Hover suave */
-.menu-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+/* Botón WhatsApp */
+.btn-wsp {
+  background-color: #25D366;
+  color: white;
+}
+.btn-wsp::after {
+  content: '';
+  background: rgba(255, 255, 255, 0.2);
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: width 0.4s ease;
+  z-index: 0;
+}
+.btn-wsp:hover::after {
+  width: 100%;
+}
+.btn-wsp:hover {
+  background-color: #1ebe5d;
 }
 
-/* ----- DISEÑO MÓVIL (INNOVADOR) ----- */
+/* Botón Donar */
+.btn-donar {
+  background-color: var(--color-acento);
+  color: #1A1F36;
+}
+.btn-donar:hover {
+  background-color: #e29310;
+  color: white;
+}
+
+/* Íconos dentro de los botones */
+.menu-card i {
+  font-size: 1.1rem;
+}
+
+/* Responsivo móvil */
+@media (max-width: 991.98px) {
+  .header-btn-group {
+    width: 100%;
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+  .menu-card {
+    width: 100%;
+    max-width: 280px;
+    font-size: 1.05rem;
+  }
+}
+
+
 @media (max-width: 991.98px) {
   .header-mobile-panel {
     flex-direction: column;
     align-items: center;
     padding: 1rem 0;
   }
-
   .menu-card {
     width: 90%;
     max-width: 280px;
@@ -323,13 +367,10 @@ body.page-loaded footer {
     font-size: 1.1rem;
   }
 }
-
-/* ----- DISEÑO DESKTOP (LIMPIO Y FUNCIONAL) ----- */
 @media (min-width: 992px) {
   .header-mobile-panel {
     gap: 0.75rem;
   }
-
   .menu-card {
     font-size: 0.9rem;
     padding: 0.5rem 1.25rem;
@@ -345,13 +386,11 @@ body.page-loaded footer {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     margin-top: 15px;
   }
-
   .btn-close {
     position: absolute;
     top: 15px;
     right: 20px;
   }
-
   .menu-card {
     display: inline-flex;
     align-items: center;
@@ -365,8 +404,210 @@ body.page-loaded footer {
   font-weight: bold;
 }
 
+/* Hamburguesa animada */
+.hamburger {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px;
+  z-index: 1001;
+}
+.hamburger-box {
+  width: 30px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+.hamburger-inner {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #0A9396;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #0A9396;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger-inner::before {
+  top: -8px;
+}
+.hamburger-inner::after {
+  bottom: -8px;
+}
+
+/* Estado activo (menú abierto = X) */
+/* Estado activo controlado por clase */
+.hamburger.is-active .hamburger-inner {
+  background-color: transparent;
+}
+.hamburger.is-active .hamburger-inner::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.is-active .hamburger-inner::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Navbar sticky */
+/* Estilo base sticky mejorado */
+.sticky-navbar {
+  backdrop-filter: blur(12px); /* Efecto vidrio esmerilado */
+  background-color: rgba(255, 255, 255, 0.85); /* Blanco translúcido */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Borde sutil */
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s ease;
+}
+
+/* Efecto scroll: reducir padding */
+.sticky-navbar.shrink .navbar {
+  padding-top: 0.4rem !important;
+  padding-bottom: 0.4rem !important;
+  transition: padding 0.3s ease;
+}
+
+.datos-box {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+.datos-box.mostrar {
+  max-height: 500px; /* ajusta si tu contenido es más largo */
+  padding-top: 1rem;
+}
+
+/* Espaciado para evitar que el contenido quede oculto bajo el header */
+body {
+  padding-top: 80px; /* ajusta si tu navbar es más alta */
+}
+
+.footer-icon {
+  font-size: 1.1rem;
+  color: #2E2E2E;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer-icon:hover {
+  color: #EBA900; /* Color de tu marca */
+  transform: translateY(-2px);
+}
+
+.menu-card {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-wsp {
+  background-color: #0A9396;
+  color: white;
+}
+.btn-wsp:hover {
+  background-color: #087c7e;
+}
+
+.btn-donar {
+  background-color: #EBA900;
+  color: white;
+}
+.btn-donar:hover {
+  background-color: #c68a00;
+}
+
+.btn-contacto {
+  background-color: #FAA915; /* Naranja brillante de tu marca */
+  color: white;
+  padding: 10px 22px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-contacto:hover {
+  background-color: #d8900f; /* Tono más oscuro al pasar el mouse */
+  transform: translateY(-2px);
+}
+
+@keyframes bounceImage {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-25px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-12px);
+  }
+}
+
+.floating-img {
+  animation: smoothFloat 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Efecto flotante suave */
+@keyframes smoothFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+
+.floating-shapes .shape {
+  position: absolute;
+  background-color: var(--color-primario);
+  opacity: 0.2;
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+.shape-1 {
+  width: 80px;
+  height: 80px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+.shape-2 {
+  width: 40px;
+  height: 40px;
+  bottom: 10%;
+  left: 30%;
+  animation-delay: 1s;
+}
+.shape-3 {
+  width: 60px;
+  height: 60px;
+  top: 15%;
+  right: 5%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+
+
+
 
 </style>
+
 	</head>
 	<body>
 		<!-- Page Wrapper -->
@@ -380,338 +621,202 @@ body.page-loaded footer {
 			<!-- END back-to-top-->	
 		
 			<!-- Start Header Section -->
-<header class="atf-site-header atf-style1 atf-sticky-header bg-white shadow-sm position-relative z-3">
-  <nav class="navbar navbar-expand-lg navbar-light container py-2">
+    <header class="atf-site-header atf-style1 atf-sticky-header sticky-navbar bg-white shadow-sm position-fixed top-0 start-0 w-100 z-3">
 
-    <!-- LOGO -->
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="assets/img/logo.png" alt="Logo" style="max-height: 60px; width: auto;">
-    </a>
+      <nav class="navbar navbar-expand-lg navbar-light container py-2">
 
-    <!-- Botón hamburguesa -->
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-      aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Menú colapsable -->
-    <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
-      <!-- Botón de cerrar (solo visible en móvil) -->
-      <button type="button" class="btn-close d-lg-none ms-auto mb-3" aria-label="Cerrar menú" data-bs-toggle="collapse" data-bs-target="#mainNavbar"></button>
-
-      <!-- Opciones de navegación -->
-      <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center gap-lg-3 text-center text-lg-start">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#proyectos">Proyectos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contacto">Contacto</a>
-        </li>
-      </ul>
-
-      <!-- Botones especiales -->
-      <div class="d-flex flex-column flex-lg-row align-items-center gap-3 pt-3 pt-lg-0">
-        <a href="https://wa.me/56912345678" target="_blank" class="menu-card bg-success text-white px-3 py-2 rounded">
-          <i class="fab fa-whatsapp fa-lg me-2"></i> WhatsApp
+        <!-- LOGO -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="assets/img/logo.png" alt="Logo" style="max-height: 60px; width: auto;">
         </a>
-        <a href="#donar" class="menu-card bg-warning text-dark px-3 py-2 rounded">
-          <i class="fas fa-hand-holding-heart fa-lg me-2"></i> Donar
-        </a>
-      </div>
-    </div>
 
-  </nav>
-</header>
+        <!-- Menú colapsable -->
+        <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+          <div class="header-mobile-panel d-flex flex-lg-row flex-column align-items-center w-100">
 
+            <!-- Menú de navegación -->
+            <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center gap-lg-3 text-center text-lg-start">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#proyectos">Proyectos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto">Contacto</a>
+              </li>
+            </ul>
 
+            <!-- Botones con efecto bonito -->
+            <div class="header-btn-group d-flex flex-column flex-lg-row align-items-center gap-3 pt-3 pt-lg-0">
+              <a href="https://wa.me/56912345678" target="_blank" class="menu-card btn-wsp">
+                <i class="fab fa-whatsapp me-2"></i> WhatsApp
+              </a>
+              <a href="#donar" class="menu-card btn-donar">
+                <i class="fas fa-hand-holding-heart me-2"></i> Donar
+              </a>
+            </div>
 
+          </div>
+        </div>
 
+        <!-- Botón hamburguesa animado -->
+        <button id="hamburgerBtn" class="hamburger d-lg-none border-0 bg-transparent" type="button"
+          data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+          aria-controls="mainNavbar" aria-expanded="false" aria-label="Abrir menú">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+          </span>
+        </button>
 
+      </nav>
+    </header>
 
 			<!-- START HOME -->
-	<section id="home" class="atf-hero-area-style1 atf-clip-area atf-align-items-details">
-	<div class="container">
-		<div class="row justify-content-start text-start align-items-center">
-		<!--start COL-->
-		<div class="col-lg-7 col-md-7 col-12">
-			<div class="atf-hero-content-style1">
-			<span class="sub-title text-white">Participación Ciudadana Digital</span>
-			<h1 class="title">Inicia la Transformación de tu Unidad Vecinal</h1>
-			<p class="me-lg-5 describtion">
-				Descubre cómo implementar nuestra Plataforma de Participación Ciudadana y construyamos juntos un Ecosistema Colaborativo en tu comunidad. 
-			</p>
+    <section id="home" class="atf-hero-area-style1 atf-clip-area atf-align-items-details position-relative overflow-hidden">
+      <div class="container">
+        <div class="row justify-content-start text-start align-items-center">
+          
+          <!-- Contenido -->
+          <div class="col-lg-7 col-md-7 col-12">
+            <div class="atf-hero-content-style1 wow fadeInLeft" data-wow-delay="0.3s" data-wow-duration="1.2s">
+              <span class="sub-title text-white">Participación Ciudadana Digital</span>
+              <h1 class="title">Inicia la Transformación de tu Unidad Vecinal</h1>
+              <p class="me-lg-5 describtion">
+                Descubre cómo implementar nuestra Plataforma de Participación Ciudadana y construyamos juntos un Ecosistema Colaborativo en tu comunidad. 
+              </p>
 
-			<!-- Main-btn -->
-			<div class="atf-one__btn-wrap">
-				<a href="#app" class="atf-one__btn">
-				<i class="fa fa-globe"></i><span>Explorar</span><b>App Web</b>
-				</a>
-			</div>
-			</div><!--- END CONTENT -->
-		</div><!--- END COL -->
+              <div class="atf-one__btn-wrap mt-4 wow fadeInUp" data-wow-delay="0.6s" data-wow-duration="1.2s">
+                <a href="#app" class="atf-one__btn">
+                  <i class="fa fa-globe"></i><span>Explorar</span><b>App Web</b>
+                </a>
+              </div>
+            </div>
+          </div>
 
-		<div class="col-lg-5 col-md-5 col-12 d-none d-md-block text-center">
-			<div class="home-image-2">
-			<img src="assets/img/bg/mobile3.png" alt="app Deseo Compartir">
-			</div>
-		</div><!--- END COL -->
-		</div><!--- END ROW -->
-	</div><!--- END CONTAINER -->
-	</section>
+          <!-- Imagen flotando -->
+          <div class="col-lg-5 col-md-5 col-12 d-none d-md-block text-center wow fadeInRight" data-wow-delay="0.5s" data-wow-duration="1.2s">
+            <div class="home-image-2">
+              <img src="assets/img/bg/dc-logo-2-1020x1024-Photoroom.webp" alt="app Deseo Compartir" class="floating-img-smooth">
+            </div>
+          </div>
+        </div>
+      </div>
 
-	<section id="donar" class="atf-section-padding bg-light">
+      <!-- Partículas decorativas opcionales -->
+      <div class="floating-shapes">
+        <span class="shape shape-1"></span>
+        <span class="shape shape-2"></span>
+        <span class="shape shape-3"></span>
+      </div>
+    </section>
+      
+
+
+<section id="donar" class="atf-section-padding bg-light">
   <div class="container">
-    <div class="row justify-content-center text-center">
-      <div class="col-lg-8">
-        <div class="atf-section-title">
+    <div class="row align-items-center">
+      
+      <!-- Imagen --> 
+      <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+        <img src="assets/img/bg/equipo.webp" alt="Donar" class="img-fluid rounded shadow-sm" style="max-width: 100%; height: auto;">
+      </div>
+
+      <!-- Contenido -->
+      <div class="col-lg-6">
+        <div class="atf-section-title text-center text-lg-start">
           <span class="sub-title">Apoya nuestra causa</span>
           <h2 class="title">¡Tu aporte puede hacer la diferencia!</h2>
           <p class="describtion">
-            Con tu donación ayudamos a más comunidades a fortalecer la participación ciudadana. Cada aporte construye un mejor entorno vecinal.
+            Con tu donación ayudamos a más comunidades a fortalecer la participación ciudadana.<br>
+            Cada aporte construye un mejor entorno vecinal.
           </p>
         </div>
-      </div>
-    </div>
 
-    <div class="row justify-content-center text-center">
-      <div class="col-md-6">
-        <form action="procesar_donacion.php" method="POST" class="donation-form">
-          <div class="form-group mb-3">
-            <label for="nombre">Nombre completo</label>
-            <input type="text" id="nombre" name="nombre" class="form-control" required>
-          </div>
-
-          <div class="form-group mb-3">
-            <label for="correo">Correo electrónico</label>
-            <input type="email" id="correo" name="correo" class="form-control" required>
-          </div>
-
-          <div class="form-group mb-3">
-            <label for="monto">Selecciona el monto</label>
-            <select name="monto" id="monto" class="form-control" required>
-              <option value="">Selecciona una opción</option>
-              <option value="1000">$1.000 CLP</option>
-              <option value="3000">$3.000 CLP</option>
-              <option value="5000">$5.000 CLP</option>
-              <option value="10000">$10.000 CLP</option>
-              <option value="20000">$20.000 CLP</option>
-              <option value="otro">Otro</option>
-            </select>
-          </div>
-
-          <button type="submit" class="atf-themes-btn mt-3">
-            <span>Donar Ahora</span>
+        <div class="p-4 bg-white rounded shadow-sm mt-4">
+          <!-- BancoEstado -->
+          <button class="atf-themes-btn w-100 mb-3" type="button" onclick="toggleDatos('bancoEstadoDatos')">
+            <i class="fas fa-university me-2"></i>Donar por BancoEstado
           </button>
-        </form>
+          <div id="bancoEstadoDatos" class="datos-box">
+            <div class="datos-inner">
+              <h5 class="mb-3"><strong>Datos para Transferencia</strong></h5>
+              <p class="mb-1"><strong>Banco:</strong> BancoEstado</p>
+              <p class="mb-1"><strong>Tipo de cuenta:</strong> Cuenta RUT</p>
+              <p class="mb-1"><strong>Cuenta:</strong> 12345678901</p>
+              <p class="mb-1"><strong>Nombre:</strong> Fundación Deseo Compartir</p>
+              <p class="mb-1"><strong>RUT:</strong> 12.345.678-9</p>
+              <p class="mb-1"><strong>Correo:</strong> contacto@deseocompartir.cl</p>
+              <p class="mt-3"><em>Envía tu comprobante al correo indicado. ¡Gracias por tu aporte!</em></p>
+            </div>
+          </div>
+
+          <!-- Mercado Pago -->
+          <button class="atf-themes-btn w-100 mb-3 bg-warning text-dark" type="button" onclick="toggleDatos('mercadoPagoDatos')">
+            <i class="fas fa-wallet me-2"></i>Donar por Mercado Pago
+          </button>
+          <div id="mercadoPagoDatos" class="datos-box">
+            <div class="datos-inner">
+              <h5 class="mb-3"><strong>Enlace directo</strong></h5>
+              <p class="mb-2">Puedes donar de forma segura a través de nuestro enlace:</p>
+              <a href="https://www.mercadopago.cl/link-de-ejemplo" target="_blank" class="btn btn-sm btn-dark">
+                <i class="fas fa-external-link-alt me-1"></i>Ir a Mercado Pago
+              </a>
+              <p class="mt-3"><em>Recibirás un correo de confirmación tras completar el pago.</em></p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
 
+<!-- Empresas Colaboradas -->
+<section class="py-5 bg-light" id="empresas">
+  <div class="container text-center">
+    <h2 class="fw-bold mb-4">Empresas Colaboradoras</h2>
+    <p class="mb-5 text-muted">Conoce algunas de las organizaciones con las que hemos trabajado.</p>
 
+    <div class="swiper empresaSwiper">
+      <div class="swiper-wrapper">
 
-
-			<!-- END HOME -->
-			
-			<!-- START COMPANY BRAND LOGO  -->
-<div id="atf-brand-area" class="atf-section-padding">
-  <div class="container">
-    <div class="row clearfix justify-content-center text-center">
-      <div class="atf-section-title wow zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
-        <span class="sub-title">¿A quién va dirigida?</span>
-      </div>
-    </div>
-
-    <div class="row clearfix">
-      <div class="col-md-12 col-lg-12">
-        <div class="atf-brand-active owl-carousel">
-
-          <div class="atf-brand-content">
-            <div class="atf-brand-icon">
-              <i class="fa fa-user"></i>
-            </div>
-            <div class="atf-brand-title">
-              <h3>Vecin@s<br>Activos</h3>
-            </div>
-          </div>
-
-          <div class="atf-brand-content">
-            <div class="atf-brand-icon">
-              <i class="fa fa-users-cog"></i>
-            </div>
-            <div class="atf-brand-title">
-              <h3>Organizaciones<br>Locales</h3>
-            </div>
-          </div>
-
-          <div class="atf-brand-content">
-            <div class="atf-brand-icon">
-              <i class="fa fa-university"></i>
-            </div>
-            <div class="atf-brand-title">
-              <h3>Municipios<br>Conectados</h3>
-            </div>
-          </div>
-
-          <div class="atf-brand-content">
-            <div class="atf-brand-icon">
-              <i class="fa fa-hands-helping"></i>
-            </div>
-            <div class="atf-brand-title">
-              <h3>Voluntari@s<br>Comprometid@s</h3>
-            </div>
-          </div>
-
-          <div class="atf-brand-content">
-            <div class="atf-brand-icon">
-              <i class="fa fa-bullhorn"></i>
-            </div>
-            <div class="atf-brand-title">
-              <h3>Líderes<br>Comunitarios</h3>
-            </div>
-          </div>
-
-          <div class="atf-brand-content">
-            <div class="atf-brand-icon">
-              <i class="fa fa-globe"></i>
-            </div>
-            <div class="atf-brand-title">
-              <h3>Ciudadan@s<br>Informad@s</h3>
-            </div>
-          </div>
-
+        <!-- Microsoft -->
+        <div class="swiper-slide p-3">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" class="img-fluid grayscale mx-auto" loading="lazy" style="max-height: 80px;">
         </div>
-      </div><!-- END COL -->
-    </div><!--END ROW-->
-  </div><!--END CONTAINER-->
-</div>
 
-			<!-- END COMPANY BRAND LOGO -->
-			
-			
-			<!-- START FEATURE -->
-<section id="service" class="atf-section-padding bg-f1">
-  <div class="container">
-    <div class="row justify-content-center text-center">
-      <div class="col-xl-6 col-lg-6 col-md-8 col-12">
-        <div class="atf-section-title wow zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
-          <span class="sub-title">Ventajas</span>
-          <h2 class="title">¿Por qué usar la app?</h2>
-          <p class="describtion">Deseo Compartir App es una plataforma sencilla, moderna y eficaz para fortalecer la participación ciudadana en tu Unidad Vecinal.</p>
+        <!-- Apple -->
+        <div class="swiper-slide p-3">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" class="img-fluid grayscale mx-auto" loading="lazy" style="max-height: 80px;">
         </div>
-      </div>
-    </div>
 
-    <div class="row clearfix">
-      <div class="col-lg-6 col-xl-6 col-md-6 col-12">
-        <div class="atf-single-feature style1 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.4s" data-wow-offset="0">
-          <div class="atf-feature-icon">
-            <i class="fa-solid fa-bullhorn"></i>
-          </div>
-          <div class="atf-feature-text">
-            <h4>Participación Real</h4>
-            <p>Exprésate mediante encuestas, foros y propuestas para influir en decisiones que afectan a tu comunidad.</p>
-          </div>
+        <!-- IBM -->
+        <div class="swiper-slide p-3">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" class="img-fluid grayscale mx-auto" loading="lazy" style="max-height: 80px;">
         </div>
-      </div>
 
-      <div class="col-lg-6 col-xl-6 col-md-6 col-12">
-        <div class="atf-single-feature style1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
-          <div class="atf-feature-icon">
-            <i class="fa-solid fa-lightbulb"></i>
-          </div>
-          <div class="atf-feature-text">
-            <h4>Fomenta Ideas</h4>
-            <p>Comparte propuestas innovadoras y colabora en la creación de soluciones para tu territorio.</p>
-          </div>
+        <!-- Samsung -->
+        <div class="swiper-slide p-3">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" class="img-fluid grayscale mx-auto" loading="lazy" style="max-height: 80px;">
         </div>
-      </div>
 
-      <div class="col-lg-6 col-xl-6 col-md-6 col-12">
-        <div class="atf-single-feature style1 wow fadeIn" data-wow-duration="3s" data-wow-delay="0.5s" data-wow-offset="0">
-          <div class="atf-feature-icon">
-            <i class="fa-solid fa-handshake-angle"></i>
-          </div>
-          <div class="atf-feature-text">
-            <h4>Gestión CoSocial</h4>
-            <p>Empodera a vecin@s, organizaciones y líderes locales promoviendo una cultura de acción colaborativa.</p>
-          </div>
+        <!-- Oracle -->
+        <div class="swiper-slide p-3">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle" class="img-fluid grayscale mx-auto" loading="lazy" style="max-height: 80px;">
         </div>
-      </div>
 
-      <div class="col-lg-6 col-xl-6 col-md-6 col-12">
-        <div class="atf-single-feature style1 wow fadeIn" data-wow-duration="3s" data-wow-delay="0.5s" data-wow-offset="0">
-          <div class="atf-feature-icon">
-            <i class="fa-solid fa-bell"></i>
-          </div>
-          <div class="atf-feature-text">
-            <h4>Alertas y Noticias</h4>
-            <p>Recibe notificaciones con nuevas oportunidades de participación y actualizaciones relevantes de tu sector.</p>
-          </div>
-        </div>
       </div>
     </div>
   </div>
-</section>
-
-			<!-- END FEATURE -->
-			
-
-			<!-- START ABOUT AREA  -->
-<section id="about" class="atf-about-area atf-section-padding">
-  <div class="container">
-    <div class="row clearfix align-items-center">
-      <div class="col-lg-6 col-12 ">
-        <div class="atf-about-area wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
-          <div class="atf-section-title">
-            <span class="sub-title">Funcionalidades</span>
-            <h2 class="title">Todo lo que puedes hacer</h2>
-          </div>
-
-          <div class="atf-about-list d-flex justify-content-between">
-            <h4><i class="fa fa-check mr-5"></i>Responder Encuestas</h4>
-            <h4><i class="fa fa-check mr-5"></i>Proponer Ideas</h4>
-          </div>
-          <div class="atf-about-list d-flex justify-content-between">
-            <h4><i class="fa fa-check mr-5"></i>Participar en Foros</h4>
-            <h4><i class="fa fa-check mr-5"></i>Votar Iniciativas</h4>
-          </div>
-          <div class="atf-about-list d-flex justify-content-between">
-            <h4><i class="fa fa-check mr-5"></i>Comentar Propuestas</h4>
-            <h4><i class="fa fa-check mr-5"></i>Unirte a Comunidades</h4>
-          </div>
-          <div class="atf-about-list d-flex justify-content-between">
-            <h4><i class="fa fa-check mr-5"></i>Recibir Notificaciones</h4>
-          </div>
-
-          <!-- About-btn -->
-          <div class="atf-about-btn mt-40">
-            <a href="#" class="atf-themes-btn"><span>Ver Demo</span> </a>
-          </div>
-        </div>
-      </div><!--- END COL -->
-
-      <div class="col-lg-6 col-12 mt-lg-40 wow zoomIn" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
-        <div class="atf-about-img text-center">
-          <img src="assets/img/about/app-mobile.png" alt="app">
-        </div>
-      </div><!--- END COL -->
-    </div><!--- END ROW -->
-  </div><!--- END CONTANIAR -->
-</section>
-	
-			<!-- END ABOUT AREA  -->
-			
+</section>			
 			<!-- START COMPARE AREA  -->
 <section id="compare" class="atf-compare-area atf-section-padding">
   <div class="container">
     <div class="row clearfix align-items-center">
       <div class="col-lg-6 col-12 pe-lg-5 mb-lg-40 wow zoomIn" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
         <div class="atf-compare-img text-center">
-          <img src="assets/img/bg/mobile-5.png" alt="app">
+          <img src="assets/img/bg/Deseo-compartir.png" alt="app">
         </div>
       </div><!--- END COL -->
 
@@ -768,7 +873,7 @@ body.page-loaded footer {
       <div class="col-xl-6 col-lg-6 col-md-8 col-12">
         <div class="atf-section-title wow zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
           <span class="sub-title">Funcionalidades</span>
-          <h2 class="title">Lo que puedes hacer en Deseo Compartir App</h2>
+          <h2 class="title">¿Qué puedo hacer en Deseo Compartir?</h2>
           <p class="describtion">Explora cómo nuestra plataforma facilita la participación ciudadana activa en tu unidad vecinal.</p>
         </div>
       </div><!--- END COL -->
@@ -809,7 +914,7 @@ body.page-loaded footer {
 
       <div class="col-lg-6 col-12 ps-lg-5 mt-lg-40 wow zoomIn" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0">
         <div class="atf-feature-img text-center">
-          <img src="assets/img/bg/mobile2.png" alt="app">
+          <img src="assets/img/about/descubre-plataforma-1024x856.webp" alt="app">
         </div>
       </div><!--- END COL -->
     </div><!--- END ROW -->
@@ -952,31 +1057,7 @@ body.page-loaded footer {
 
 			<!-- COUNTER SECTION END-->
 			
-			<!-- START SCREENSHOT -->
-<section id="screenshot" class="atf-screenshot-area atf-section-padding bg-f1">
-  <div class="container">
-    <div class="row justify-content-center text-center">
-      <div class="col-xl-6 col-lg-6 col-md-8 col-12">
-        <div class="atf-section-title wow zoomIn" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0">
-          <span class="sub-title">Vista previa</span>
-          <h2 class="title">Pantallas de la App</h2>
-          <p class="describtion">Explora algunas imágenes reales de la plataforma en acción. Así se ve tu participación ciudadana en marcha.</p>
-        </div>
-      </div><!--- END COL -->
-    </div><!--- END ROW -->
-    
-    <div class="row justify-content-center text-center">					
-      <div class="col-lg-12">
-        <div class="screenshot-carousel owl-carousel atf_owl_dot_slider">
-          <img src="assets/img/screenshot/screenshot-1.png" alt="Pantalla App">
-          <img src="assets/img/screenshot/screenshot-2.png" alt="Pantalla App">
-          <img src="assets/img/screenshot/screenshot-3.png" alt="Pantalla App">
-          <img src="assets/img/screenshot/screenshot-4.png" alt="Pantalla App">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
 
 			<!-- END SCREENSHOT -->
 			<!-- START FREQUENTLY AREA -->
@@ -1059,11 +1140,7 @@ body.page-loaded footer {
         </div>
         <div class="atf-one__btn-wrap mt-30">
           <a href="#demo" class="atf-one__btn">
-            <i class="fa fa-globe"></i><span>Ver</span><b>Demostración Web</b>
-          </a>
-          
-          <a href="#faq" class="atf-one__btn ml-3">
-            <i class="fa fa-question-circle"></i><span>Leer</span><b>Preguntas Frecuentes</b>
+            <i class="fa fa-globe"></i><span>Visitar Web</span>
           </a>
         </div>
       </div><!--- END COL -->
@@ -1077,110 +1154,57 @@ body.page-loaded footer {
   </div><!-- End CONTAINER -->	
 </section>
 
-			<!-- END FREQUENTLY AREA-->	
-			<!-- CONTACT SECTION START-->
-			<section id="contact" class="atf-contact-area atf-section-padding">
-			<div class="container">
 
-				<!-- Título -->
-				<div class="row justify-content-center text-center mb-5">
-				<div class="col-xl-6 col-lg-6 col-md-8 col-12">
-					<div class="atf-section-title wow zoomIn" data-wow-duration="1s" data-wow-delay="0.5s">
-					<span class="sub-title">Contacto</span>
-					<h2 class="title">Hablemos</h2>
-					<p class="describtion">¿Tienes alguna duda o proyecto en mente? Estoy listo para ayudarte.</p>
-					</div>
-				</div>
-				</div>
-
-				<!-- Formulario -->
-				<div class="row justify-content-center">
-				<div class="col-lg-8 col-md-10 col-12">
-					<div class="contact">
-					<form id="contact-form" class="atf-contact-form form" method="POST" action="mail.php">
-						<div class="row">
-						<div class="form-group col-md-12">
-							<label>Tu Nombre</label>
-							<input type="text" name="name" class="form-control" id="name" placeholder="Ingresa tu nombre" required>
-						</div>
-						<div class="form-group col-md-12">
-							<label>Tu Correo</label>
-							<input type="email" name="email" class="form-control" id="form_email" placeholder="Ingresa tu correo" required>
-						</div>
-						<div class="form-group col-md-12">
-							<label>Tu Mensaje</label>
-							<textarea rows="6" name="message" class="form-control" id="message" placeholder="Escribe tu mensaje" required></textarea>
-						</div>
-						<div class="col-md-12">
-							<div class="atf-contact-btn text-start">
-							<button type="submit" name="submit" id="submitButton" class="atf-themes-btn">
-								<span>Enviar Mensaje</span>
-							</button>
-							</div>
-						</div>
-						</div>
-					</form>
-					<p class="form-message"></p>
-					</div>
-				</div>
-				</div>
-
-			</div>
-			</section>
 
 			<!-- CONTACT SECTION END-->
 
 			<!-- FOOTER SECTION START-->
-			<footer id="footer" class="black-bg atf_attach_bg" style="background-image: url(assets/img/footer/fbg.png);">
-			<div class="container">
-				<div class="row atf-section-padding justify-content-between align-items-center">
+<footer id="footer" class="bg-white shadow-sm border-top position-relative z-2">
+  <div class="container py-5">
+    <div class="row justify-content-between align-items-center text-center text-lg-start">
 
-				<!-- Logo e Inicio -->
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<div class="atf-footer-link text-center text-lg-start">
-					<div class="atf-footer-logo mb-3">
-					<a href="index.html">
-					<img src="assets/img/logo.png" alt="Logo" style="max-height: 150px; width: auto;">
-					</a>
+      <!-- Logo + Redes -->
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <a href="index.html" class="d-inline-block mb-3">
+          <img src="assets/img/logo.png" alt="Logo" style="max-height: 100px;">
+        </a>
+        <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+          <a href="#" class="footer-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer-icon"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="footer-icon"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
 
-					</div>
-					<div class="atf-footer-social-icon mt-3">
-						<a href="#"><i class="fab fa-facebook-f"></i></a>
-						<a href="#"><i class="fab fa-instagram"></i></a>
-						<a href="#"><i class="fab fa-x-twitter"></i></a>
-						<a href="#"><i class="fab fa-tiktok"></i></a>
-					</div>
-					</div>
-				</div>
+      <!-- Dirección -->
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <h5 class="text-dark mb-2 fw-semibold">📍 Dirección</h5>
+        <p class="mb-0 text-muted">Concepción, Chile</p>
+      </div>
 
-				<!-- Dirección -->
-				<div class="col-lg-4 col-md-6 col-sm-12 mt-4 mt-lg-0">
-					<div class="atf-footer-link text-center">
-					<h5 class="mb-2 gradient-text">Dirección</h5>
-					<p><i class="fas fa-map-marker-alt me-2"></i>Concepción, Chile</p>
-					</div>
-				</div>
+      <!-- Botones -->
+      <div class="col-lg-4 d-flex flex-column flex-lg-row justify-content-center justify-content-lg-end align-items-center gap-3">
+        <a href="https://wa.me/56912345678" target="_blank" class="menu-card btn-wsp d-inline-flex align-items-center">
+          <i class="fab fa-whatsapp me-2"></i> WhatsApp
+        </a>
+        <a href="#donar" class="menu-card btn-donar d-inline-flex align-items-center">
+          <i class="fas fa-hand-holding-heart me-2"></i> Donar
+        </a>
+      </div>
 
-				<!-- Botón WhatsApp y Donar -->
-				<div class="col-lg-4 col-md-12 text-center mt-4 mt-lg-0">
-					<a href="https://wa.me/56912345678" class="atf-themes-btn me-2" target="_blank">
-					<i class="fab fa-whatsapp me-1"></i> WhatsApp
-					</a>
-					<a href="#donar" class="atf-themes-btn">
-					<i class="fas fa-hand-holding-heart me-1"></i> Donar
-					</a>
-				</div>
+    </div>
 
-				</div>
-			</div>
+    <!-- Línea divisoria -->
+    <hr class="my-4">
 
-			<!-- Copyright -->
-			<div class="atf-footer-boottom text-center mt-4">
-				<div class="container">
-				<p>&copy; 2025 WebmakerChile. Hecho con ❤️</p>
-				</div>
-			</div>
-			</footer>
+    <!-- Copyright -->
+    <div class="text-center">
+      <p class="mb-0 small text-muted">&copy; 2025 <strong>WebmakerChile</strong> – Hecho con <span style="color: red;">❤️</span></p>
+    </div>
+  </div>
+</footer>
+
+
 
 			<!--- END FOOTER -->
 
@@ -1188,32 +1212,35 @@ body.page-loaded footer {
 		<!-- PAGE WRAPPER END-->
 		
 		<!-- Latest jQuery -->
-		<script src="assets/js/jquery.min.js"></script>
-		<!-- Latest compiled and minified Bootstrap -->
-		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-		<!-- owl-carousel min js  -->
-		<script src="assets/owlcarousel/js/owl.carousel.min.js"></script>
-		<!-- Counter js -->
-		<script src="assets/js/jquery.counterup.js"></script>
-		<!-- waypoints js -->
-		<script src="assets/js/waypoints.min.js"></script>
-		<!-- jquery.appear js -->
-		<script src="assets/js/jquery.appear.min.js"></script>
-		<!-- easing js -->
-		<script src="assets/js/easing.min.js"></script>
-		<script src="assets/js/odometer.min.js"></script>
-		<!-- wow js -->
-		<script src="assets/js/wow.min.js"></script>
-		<!-- ajaxchimp js -->
-		<script src="assets/js/ajaxchimp.min.js"></script>
-		<!-- form-contact js -->
-		<script src="assets/js/form-contact.js"></script>
-		<!-- main js -->
-		<script src="assets/js/main.js"></script>	
+<!-- jQuery -->
+<script src="assets/js/jquery.min.js"></script>
 
-    <script>
-  // Resalta el link del menú actual automáticamente
+<!-- Bootstrap Bundle (incluye Popper) - usa solo esta versión -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Owl Carousel -->
+<script src="assets/owlcarousel/js/owl.carousel.min.js"></script>
+
+<!-- Efectos y animaciones -->
+<script src="assets/js/jquery.appear.min.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<script src="assets/js/jquery.counterup.js"></script>
+<script src="assets/js/odometer.min.js"></script>
+<script src="assets/js/easing.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+
+<!-- Ajaxchimp y formularios -->
+<script src="assets/js/ajaxchimp.min.js"></script>
+<script src="assets/js/form-contact.js"></script>
+
+<!-- Swiper.js (carrusel de empresas) -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Main JS general -->
+<script src="assets/js/main.js"></script>
+
+<!-- Activar link activo del menú -->
+<script>
   const navLinks = document.querySelectorAll('.nav-link');
   navLinks.forEach(link => {
     if (link.href === window.location.href) {
@@ -1221,6 +1248,121 @@ body.page-loaded footer {
     }
   });
 </script>
+<!-- Inicializar Swiper carrusel -->
+<script>
+  const swiper = new Swiper(".empresaSwiper", {
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 2,
+    spaceBetween: 30,
+    breakpoints: {
+      768: { slidesPerView: 3 },
+      992: { slidesPerView: 4 }
+    }
+  });
+</script>
+<script>
+  const hamburger = document.getElementById('hamburgerBtn');
+  const navbar = document.getElementById('mainNavbar');
+
+  navbar.addEventListener('show.bs.collapse', () => {
+    hamburger.classList.add('is-active');
+  });
+
+  navbar.addEventListener('hide.bs.collapse', () => {
+    hamburger.classList.remove('is-active');
+  });
+</script>
+<script>
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('.sticky-navbar');
+    if (window.scrollY > 10) {
+      header.classList.add('shrink');
+    } else {
+      header.classList.remove('shrink');
+    }
+  });
+</script>
+
+<script>
+  const montoSelect = document.getElementById('monto');
+  const otroMontoGroup = document.getElementById('otroMontoGroup');
+  const montoOtro = document.getElementById('monto_otro');
+
+  montoSelect.addEventListener('change', function () {
+    if (this.value === 'otro') {
+      otroMontoGroup.style.display = 'block';
+      montoOtro.setAttribute('required', 'required');
+    } else {
+      otroMontoGroup.style.display = 'none';
+      montoOtro.removeAttribute('required');
+      montoOtro.value = '';
+    }
+  });
+</script>
+<script>
+  function toggleDatos(id) {
+    const box = document.getElementById(id);
+    const allBoxes = ['bancoEstadoDatos', 'mercadoPagoDatos'];
+    allBoxes.forEach(el => {
+      if (el !== id) document.getElementById(el).style.display = 'none';
+    });
+    box.style.display = box.style.display === 'none' ? 'block' : 'none';
+    box.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
+
+<script>
+  function toggleDatos(id) {
+    const boxes = document.querySelectorAll('.datos-box');
+    boxes.forEach(box => {
+      if (box.id === id) {
+        box.classList.toggle('mostrar');
+      } else {
+        box.classList.remove('mostrar');
+      }
+    });
+  }
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+
+<script>
+  const swiper = new Swiper('.empresaSwiper', {
+    loop: true,
+    speed: 1000,
+    autoplay: {
+      delay: 2000,
+      disableOnInteraction: false,
+    },
+    slidesPerView: 2,
+    spaceBetween: 30,
+    breakpoints: {
+      576: {
+        slidesPerView: 3
+      },
+      768: {
+        slidesPerView: 4
+      },
+      992: {
+        slidesPerView: 5
+      }
+    },
+    grabCursor: true,
+    centeredSlides: false,
+    effect: 'slide',
+  });
+</script>
+
+
+
+
 
 	</body>
 </html>
